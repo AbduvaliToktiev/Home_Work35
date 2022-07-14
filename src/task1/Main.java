@@ -1,4 +1,7 @@
+package task1;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -23,7 +26,14 @@ public class Main {
                 changed = item1.replaceAll(Pattern.quote(item2), "");
             }
             System.out.println(changed);
-            
+
+        List<String> asList = Arrays.asList(changed.split(","));
+        asList.forEach(System.out::println);
+        if (asList.size() >= 15) {
+            List<String> newList = new ArrayList<>(asList);
+        newList.remove( "And you told me");
+            System.out.println(newList);
+        }
         }
     }
 }
